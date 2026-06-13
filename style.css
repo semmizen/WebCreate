@@ -1,0 +1,225 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    background:#0d1117;
+    color:#ffffff;
+
+    font-family:
+        Inter,
+        Segoe UI,
+        Arial,
+        sans-serif;
+}
+
+#app{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* TOPBAR */
+
+#topbar{
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 15px;
+
+    background:#161b22;
+
+    border-bottom:1px solid #30363d;
+}
+
+#projectInfo{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+#websiteName,
+#websiteLink{
+    width:220px;
+
+    padding:10px 12px;
+
+    border:none;
+    outline:none;
+
+    border-radius:8px;
+
+    background:#0d1117;
+    color:white;
+}
+
+#websiteName:focus,
+#websiteLink:focus{
+    border:1px solid #58a6ff;
+}
+
+#copyLink,
+#togglePreview,
+#newFile{
+    cursor:pointer;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:10px 15px;
+
+    background:#238636;
+    color:white;
+
+    transition:0.2s;
+}
+
+#copyLink:hover,
+#togglePreview:hover,
+#newFile:hover{
+    transform:translateY(-1px);
+}
+
+#topbarActions{
+    display:flex;
+    gap:10px;
+}
+
+/* WORKSPACE */
+
+#workspace{
+    flex:1;
+
+    display:flex;
+
+    overflow:hidden;
+}
+
+/* FILES */
+
+#sidebar{
+    width:240px;
+
+    background:#161b22;
+
+    border-right:1px solid #30363d;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebarHeader{
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 15px;
+
+    border-bottom:1px solid #30363d;
+}
+
+#fileList{
+    flex:1;
+
+    overflow:auto;
+}
+
+.file{
+    padding:12px 15px;
+
+    cursor:pointer;
+
+    border-bottom:1px solid #21262d;
+}
+
+.file:hover{
+    background:#1f2937;
+}
+
+.file.active{
+    background:#21262d;
+}
+
+/* EDITOR */
+
+#editorContainer{
+    flex:1;
+
+    position:relative;
+
+    background:#0d1117;
+}
+
+#editor{
+    width:100%;
+    height:100%;
+}
+
+/* PREVIEW */
+
+#previewContainer{
+    width:40%;
+
+    min-width:350px;
+
+    display:flex;
+    flex-direction:column;
+
+    background:white;
+
+    border-left:1px solid #30363d;
+}
+
+#previewHeader{
+    height:45px;
+
+    display:flex;
+    align-items:center;
+
+    padding-left:15px;
+
+    background:#161b22;
+    color:white;
+
+    border-bottom:1px solid #30363d;
+}
+
+#preview{
+    flex:1;
+
+    width:100%;
+    border:none;
+
+    background:white;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#30363d;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#161b22;
+}
