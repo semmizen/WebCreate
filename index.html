@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Web Builder</title>
 
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
@@ -28,6 +30,7 @@
                 id="websiteLink"
                 placeholder="Website Link"
                 maxlength="50"
+                readonly
             >
 
             <button id="copyLink">
@@ -54,9 +57,17 @@
 
                 <span>FILES</span>
 
-                <button id="newFile">
-                    +
-                </button>
+                <div>
+
+                    <button id="newFile">
+                        File
+                    </button>
+
+                    <button id="newFolder">
+                        Folder
+                    </button>
+
+                </div>
 
             </div>
 
@@ -72,6 +83,14 @@
 
         <section id="editorContainer">
 
+            <div id="tabs">
+
+                <div class="tab active">
+                    index.html
+                </div>
+
+            </div>
+
             <div id="editor"></div>
 
         </section>
@@ -80,7 +99,9 @@
 
             <div id="previewHeader">
 
-                <span>LIVE PREVIEW</span>
+                <span>
+                    LIVE PREVIEW
+                </span>
 
             </div>
 
@@ -95,7 +116,123 @@
 
 </div>
 
+<!-- LOGIN -->
+
+<div id="loginModal" class="modal hidden">
+
+    <div class="modalContent">
+
+        <h2>Login</h2>
+
+        <input
+            type="text"
+            id="loginUsername"
+            placeholder="Username"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
+
+        <button id="loginBtn">
+            Login
+        </button>
+
+        <button id="openRegister">
+            Register
+        </button>
+
+    </div>
+
+</div>
+
+<!-- REGISTER -->
+
+<div id="registerModal" class="modal hidden">
+
+    <div class="modalContent">
+
+        <h2>Register</h2>
+
+        <input
+            type="text"
+            id="registerUsername"
+            placeholder="Username"
+        >
+
+        <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password"
+        >
+
+        <button id="registerBtn">
+            Create Account
+        </button>
+
+        <button id="backLogin">
+            Back
+        </button>
+
+    </div>
+
+</div>
+
+<!-- CREATE FILE -->
+
+<div id="fileModal" class="modal hidden">
+
+    <div class="modalContent">
+
+        <h2>Create File</h2>
+
+        <input
+            type="text"
+            id="fileNameInput"
+            placeholder="example.html"
+        >
+
+        <button id="createFileBtn">
+            Create
+        </button>
+
+    </div>
+
+</div>
+
+<!-- CREATE FOLDER -->
+
+<div id="folderModal" class="modal hidden">
+
+    <div class="modalContent">
+
+        <h2>Create Folder</h2>
+
+        <input
+            type="text"
+            id="folderNameInput"
+            placeholder="assets"
+        >
+
+        <button id="createFolderBtn">
+            Create
+        </button>
+
+    </div>
+
+</div>
+
+<!-- MONACO LOADER -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+
 <script src="js/app.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/files.js"></script>
+<script src="js/preview.js"></script>
+<script src="js/auth.js"></script>
 
 </body>
-  </html>
+    </html>
