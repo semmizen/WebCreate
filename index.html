@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Web Builder</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <header id="topbar">
+
+        <div id="projectInfo">
+
+            <input
+                type="text"
+                id="websiteName"
+                placeholder="Website Name"
+                maxlength="50"
+            >
+
+            <input
+                type="text"
+                id="websiteLink"
+                placeholder="Website Link"
+                maxlength="50"
+            >
+
+            <button id="copyLink">
+                Copy Link
+            </button>
+
+        </div>
+
+        <div id="topbarActions">
+
+            <button id="togglePreview">
+                Hide Preview
+            </button>
+
+        </div>
+
+    </header>
+
+    <main id="workspace">
+
+        <aside id="sidebar">
+
+            <div class="sidebarHeader">
+
+                <span>FILES</span>
+
+                <button id="newFile">
+                    +
+                </button>
+
+            </div>
+
+            <div id="fileList">
+
+                <div class="file active">
+                    index.html
+                </div>
+
+            </div>
+
+        </aside>
+
+        <section id="editorContainer">
+
+            <div id="editor"></div>
+
+        </section>
+
+        <section id="previewContainer">
+
+            <div id="previewHeader">
+
+                <span>LIVE PREVIEW</span>
+
+            </div>
+
+            <iframe
+                id="preview"
+                sandbox="allow-scripts"
+            ></iframe>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+  </html>
