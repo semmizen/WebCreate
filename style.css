@@ -1,225 +1,426 @@
+/* =========================
+RESET
+========================= */
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html,
 body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
+width:100%;
+height:100%;
+overflow:hidden;
 
-    background:#0d1117;
-    color:#ffffff;
+background:#0d1117;
+color:#ffffff;
 
-    font-family:
-        Inter,
-        Segoe UI,
-        Arial,
-        sans-serif;
+font-family:
+    Inter,
+    Segoe UI,
+    Arial,
+    sans-serif;
+
 }
+
+/* =========================
+ROOT
+========================= */
+
+:root{
+--bg:#0d1117;
+--panel:#161b22;
+--panel2:#1c2128;
+--hover:#21262d;
+
+--border:#30363d;
+
+--primary:#58a6ff;
+--success:#238636;
+
+--text:#ffffff;
+--text2:#c9d1d9;
+
+--radius:10px;
+
+}
+
+/* =========================
+APP
+========================= */
 
 #app{
-    width:100%;
-    height:100vh;
+width:100%;
+height:100vh;
 
-    display:flex;
-    flex-direction:column;
+display:flex;
+flex-direction:column;
+
 }
 
-/* TOPBAR */
+/* =========================
+TOPBAR
+========================= */
 
 #topbar{
-    height:60px;
+height:65px;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-    padding:0 15px;
+padding:0 15px;
 
-    background:#161b22;
+background:var(--panel);
 
-    border-bottom:1px solid #30363d;
+border-bottom:1px solid var(--border);
+
 }
 
 #projectInfo{
-    display:flex;
-    gap:10px;
-    align-items:center;
-}
-
-#websiteName,
-#websiteLink{
-    width:220px;
-
-    padding:10px 12px;
-
-    border:none;
-    outline:none;
-
-    border-radius:8px;
-
-    background:#0d1117;
-    color:white;
-}
-
-#websiteName:focus,
-#websiteLink:focus{
-    border:1px solid #58a6ff;
-}
-
-#copyLink,
-#togglePreview,
-#newFile{
-    cursor:pointer;
-
-    border:none;
-
-    border-radius:8px;
-
-    padding:10px 15px;
-
-    background:#238636;
-    color:white;
-
-    transition:0.2s;
-}
-
-#copyLink:hover,
-#togglePreview:hover,
-#newFile:hover{
-    transform:translateY(-1px);
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 #topbarActions{
-    display:flex;
-    gap:10px;
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-/* WORKSPACE */
+/* =========================
+INPUT
+========================= */
+
+#websiteName,
+#websiteLink,
+#loginUsername,
+#loginPassword,
+#registerUsername,
+#registerPassword,
+#fileNameInput,
+#folderNameInput{
+border:none;
+outline:none;
+
+padding:10px 12px;
+
+border-radius:var(--radius);
+
+background:var(--bg);
+
+color:white;
+
+border:1px solid transparent;
+
+}
+
+#websiteName:focus,
+#websiteLink:focus,
+#loginUsername:focus,
+#loginPassword:focus,
+#registerUsername:focus,
+#registerPassword:focus,
+#fileNameInput:focus,
+#folderNameInput:focus{
+border-color:var(--primary);
+}
+
+/* =========================
+BUTTON
+========================= */
+
+button{
+cursor:pointer;
+
+border:none;
+
+padding:10px 14px;
+
+border-radius:var(--radius);
+
+color:white;
+
+transition:0.15s;
+
+}
+
+button:hover{
+transform:translateY(-1px);
+}
+
+#copyLink{
+background:var(--success);
+}
+
+#togglePreview{
+background:var(--primary);
+}
+
+#newFile,
+#newFolder{
+background:var(--panel2);
+}
+
+/* =========================
+WORKSPACE
+========================= */
 
 #workspace{
-    flex:1;
+flex:1;
 
-    display:flex;
+display:flex;
 
-    overflow:hidden;
+overflow:hidden;
+
 }
 
-/* FILES */
+/* =========================
+SIDEBAR
+========================= */
 
 #sidebar{
-    width:240px;
+width:250px;
 
-    background:#161b22;
+background:var(--panel);
 
-    border-right:1px solid #30363d;
+border-right:1px solid var(--border);
 
-    display:flex;
-    flex-direction:column;
+display:flex;
+flex-direction:column;
+
 }
 
 .sidebarHeader{
-    height:50px;
+height:55px;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-    padding:0 15px;
+padding:0 12px;
 
-    border-bottom:1px solid #30363d;
+border-bottom:1px solid var(--border);
+
 }
 
 #fileList{
-    flex:1;
+flex:1;
 
-    overflow:auto;
+overflow:auto;
+
 }
 
 .file{
-    padding:12px 15px;
+padding:12px 15px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    border-bottom:1px solid #21262d;
+border-bottom:1px solid rgba(255,255,255,.03);
+
 }
 
 .file:hover{
-    background:#1f2937;
+background:var(--hover);
 }
 
 .file.active{
-    background:#21262d;
+background:var(--hover);
+
+border-left:3px solid var(--primary);
+
 }
 
-/* EDITOR */
+/* =========================
+EDITOR
+========================= */
 
 #editorContainer{
-    flex:1;
+flex:1;
 
-    position:relative;
+display:flex;
+flex-direction:column;
 
-    background:#0d1117;
+background:var(--bg);
+
+}
+
+#tabs{
+height:45px;
+
+display:flex;
+align-items:center;
+
+background:var(--panel);
+
+border-bottom:1px solid var(--border);
+
+}
+
+.tab{
+height:100%;
+
+display:flex;
+align-items:center;
+
+padding:0 16px;
+
+cursor:pointer;
+
+}
+
+.tab.active{
+background:var(--hover);
 }
 
 #editor{
-    width:100%;
-    height:100%;
+flex:1;
 }
 
-/* PREVIEW */
+/* =========================
+PREVIEW
+========================= */
 
 #previewContainer{
-    width:40%;
+width:40%;
 
-    min-width:350px;
+min-width:350px;
 
-    display:flex;
-    flex-direction:column;
+display:flex;
+flex-direction:column;
 
-    background:white;
+background:white;
 
-    border-left:1px solid #30363d;
+border-left:1px solid var(--border);
+
 }
 
 #previewHeader{
-    height:45px;
+height:45px;
 
-    display:flex;
-    align-items:center;
+display:flex;
+align-items:center;
 
-    padding-left:15px;
+padding-left:15px;
 
-    background:#161b22;
-    color:white;
+background:var(--panel);
 
-    border-bottom:1px solid #30363d;
+color:white;
+
+border-bottom:1px solid var(--border);
+
 }
 
 #preview{
-    flex:1;
+flex:1;
 
-    width:100%;
-    border:none;
+border:none;
 
-    background:white;
+width:100%;
+
+background:white;
+
 }
 
-/* SCROLLBAR */
+/* =========================
+MODAL
+========================= */
+
+.modal{
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.65);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+}
+
+.hidden{
+display:none;
+}
+
+.modalContent{
+width:400px;
+
+display:flex;
+flex-direction:column;
+
+gap:12px;
+
+padding:25px;
+
+border-radius:16px;
+
+background:var(--panel);
+
+}
+
+.modalContent h2{
+margin-bottom:10px;
+}
+
+#loginBtn,
+#registerBtn,
+#createFileBtn,
+#createFolderBtn{
+background:var(--success);
+}
+
+#openRegister,
+#backLogin{
+background:var(--primary);
+}
+
+/* =========================
+SCROLLBAR
+========================= */
 
 ::-webkit-scrollbar{
-    width:8px;
-    height:8px;
+width:8px;
+height:8px;
 }
 
 ::-webkit-scrollbar-thumb{
-    background:#30363d;
-    border-radius:10px;
+background:#30363d;
+
+border-radius:999px;
+
 }
 
 ::-webkit-scrollbar-track{
-    background:#161b22;
+background:#161b22;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+#previewContainer{
+    width:35%;
+    min-width:280px;
+}
+
+#sidebar{
+    width:220px;
+}
+
+}
+
+@media(max-width:900px){
+
+#previewContainer{
+    display:none;
+}
+
 }
